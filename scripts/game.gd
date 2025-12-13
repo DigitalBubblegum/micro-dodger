@@ -9,17 +9,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 #	TODO spawnner which spawns 
-	#var x =$Player.get_position().x
-	#var y =$Player.get_position().y
-	#$Player/Spawner.get_children()[0].set_position(Vector2(x,y)*enemy_spawn_direction[0])
-	#$Player/Spawner.get_children()[1].set_position(Vector2(x,y)*enemy_spawn_direction[1])
-	#$Player/Spawner.get_children()[2].set_position(Vector2(x,y)*enemy_spawn_direction[2])
-	#$Player/Spawner.get_children()[3].set_position(Vector2(x,y)*enemy_spawn_direction[3])
-	#$Player/Spawner.get_children()[4].set_position(Vector2(x,y)*enemy_spawn_direction[4])
-	#$Player/Spawner.get_children()[5].set_position(Vector2(x,y)*enemy_spawn_direction[5])
-	#$Player/Spawner.get_children()[6].set_position(Vector2(x,y)*enemy_spawn_direction[6])
-	#$Player/Spawner.get_children()[7].set_position(Vector2(x,y)*enemy_spawn_direction[7])
-	#print($Player/Spawner.get_children()[0].get_position(),$Player/Spawner.get_children()[1].get_position(),$Player/Spawner.get_children()[2].get_position(),$Player/Spawner.get_children()[3].get_position(),$Player/Spawner.get_children()[4].get_position(),$Player/Spawner.get_children()[6].get_position(),$Player/Spawner.get_children()[7].get_position())
+	var x =$Player.get_position().x
+	var y =$Player.get_position().y
+	var viewport_size =  get_viewport().get_visible_rect().size
+	var r = sqrt((viewport_size.x*viewport_size.x)+(viewport_size.y*viewport_size.y))/2
+	#print(radius)
+	$Player/Spawner.get_children()[0].set_position(Vector2(x+(r*cos(45)),y+(r*sin(45))))
+	$Player/Spawner.get_children()[1].set_position(Vector2(x+(r*cos(90)),y+(r*sin(90))))
+	$Player/Spawner.get_children()[2].set_position(Vector2(x+(r*cos(135)),y+(r*sin(135))))
+	$Player/Spawner.get_children()[3].set_position(Vector2(x+(r*cos(180)),y+(r*sin(180))))
+	$Player/Spawner.get_children()[4].set_position(Vector2(x+(r*cos(225)),y+(r*sin(225))))
+	$Player/Spawner.get_children()[5].set_position(Vector2(x+(r*cos(270)),y+(r*sin(270))))
+	$Player/Spawner.get_children()[6].set_position(Vector2(x+(r*cos(315)),y+(r*sin(315))))
+	$Player/Spawner.get_children()[7].set_position(Vector2(x+(r*cos(360)),y+(r*sin(360))))
+	print($Player/Spawner.get_children()[0].get_position(),$Player/Spawner.get_children()[1].get_position(),$Player/Spawner.get_children()[2].get_position(),$Player/Spawner.get_children()[3].get_position(),$Player/Spawner.get_children()[4].get_position(),$Player/Spawner.get_children()[6].get_position(),$Player/Spawner.get_children()[7].get_position())
 	pass
 
 
